@@ -1,5 +1,3 @@
-//App.js
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Login from "./pages/Login/Login";

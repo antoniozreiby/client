@@ -1,5 +1,3 @@
-//components/homeComp/HomeComp.jsx
-
 import React from "react";
 import "./HomeComp.css";
 import { useState } from "react";

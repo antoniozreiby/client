@@ -1,5 +1,3 @@
-//components/create/CreateEntry.jsx
-
 import "./popUp.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

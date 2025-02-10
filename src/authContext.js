@@ -1,5 +1,3 @@
-//authContext.js
-
 import { createContext, useReducer, useEffect } from "react";
 
 const INITIAL_STATE = {

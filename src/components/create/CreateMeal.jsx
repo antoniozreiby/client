@@ -1,5 +1,3 @@
-//components/create/CreateMeal.jsx
-
 import "./popUp.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

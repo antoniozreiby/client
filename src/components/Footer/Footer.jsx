@@ -1,22 +1,10 @@
-// components/footer/Footer.jsx
-
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div
-      className="footer"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100px",
-        backgroundColor: "#BE3144",
-        color: "white",
-        fontWeight: "800",
-      }}
-    >
-      <p>ShapeSync</p>
+    <div className="footer">
+      <p style={{ fontSize: "30px" }}>GymBuddy</p>
     </div>
   );
 };

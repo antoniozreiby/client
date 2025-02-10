@@ -1,5 +1,3 @@
-//pages/Entry/Entries.jsx
-
 import React, { useContext } from "react";
 import useFetch from "../../useFetch";
 import Navbar from "../../components/Navbar/Navbar";

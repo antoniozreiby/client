@@ -1,5 +1,3 @@
-//pages/Routine/Routines.jsx
-
 import React, { useContext } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";

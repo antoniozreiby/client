@@ -1,5 +1,3 @@
-//pages/Register/Register.jsx
-
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -8,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function Register() {
   const navigate = useNavigate();
@@ -22,43 +21,62 @@ function Register() {
   const handleClick = async (e) => {
     e.preventDefault();
 
-    if (file) {
-      const data = new FormData();
+    try {
+      let profileUrl = "";
 
-      data.append("file", file);
-      data.append("upload_preset", "upload");
+      if (file) {
+        const data = new FormData();
+        data.append("file", file);
+        data.append("upload_preset", "upload");
 
-      try {
         const uploadRes = await axios.post(
           "http://localhost:2000/api/image/upload",
           data,
-          { withcredentials: false }
+          { withCredentials: false }
         );
 
-        const { url } = uploadRes.data;
-
-        const newUser = {
-          ...info,
-          profilePicture: url,
-        };
-
-        await axios.post("http://localhost:2000/api/auth/register", newUser, {
-          withcredentials: false,
-        });
-
-        navigate("/login");
-      } catch (err) {
-        console.log(err);
+        profileUrl = uploadRes.data.url;
       }
-    } else {
-      try {
-        await axios.post("http://localhost:2000/api/auth/register", info, {
-          withcredentials: false,
-        });
 
+      const newUser = {
+        ...info,
+        profilePicture: profileUrl,
+      };
+
+      await axios.post("http://localhost:2000/api/auth/register", newUser, {
+        withCredentials: false,
+      });
+
+      Swal.fire({
+        title: "Success!",
+        text: "Account created successfully!",
+        icon: "success",
+        confirmButtonText: "OK",
+      }).then(() => {
         navigate("/login");
-      } catch (err) {
-        console.log(err);
+      });
+    } catch (err) {
+      if (err.response && err.response.status === 409) {
+        Swal.fire({
+          title: "Email is already in use!",
+          text: "Please use another one.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      } else if (err.response && err.response.status === 500) {
+        Swal.fire({
+          title: "User Name already in use!",
+          text: "Please use another one.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      } else {
+        Swal.fire({
+          title: "User Name already in use!",
+          text: "Please use another one.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       }
     }
   };
@@ -71,32 +89,6 @@ function Register() {
           <h1>Join Us</h1>
 
           <form>
-            <div className="image">
-              <img
-                src={
-                  file
-                    ? URL.createObjectURL(file)
-                    : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-                }
-                alt=""
-                height="100px"
-              />
-
-              <div className="txt_field_img">
-                <label htmlFor="file">
-                  Image
-                  {/* <FontAwesomeIcon className="icon" 
-                                    icon={faPlusCircle} /> */}
-                </label>
-                <input
-                  type="file"
-                  id="file"
-                  onChange={(e) => setFile(e.target.files[0])}
-                  style={{ display: "none" }}
-                />
-              </div>
-            </div>
-
             <div className="formInput">
               <div className="txt_field">
                 <input

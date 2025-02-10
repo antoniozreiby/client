@@ -1,5 +1,3 @@
-//components/Navbar/Navbar.jsx
-
 import "./navbar.css";
 import { useContext } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +18,7 @@ const Navbar = () => {
   return (
     <div className="navContainer">
       <Link to="/home">
-        <p className="navLogo">ShapeSync</p>
+        <p className="navLogo">GymBuddy</p>
       </Link>
 
       <input type="checkbox" id="menu-bar" />
@@ -46,25 +44,17 @@ const Navbar = () => {
           </Link>
           {user ? (
             <>
-              <Link to={`/user/${user._id}`}>
-                <li onClick={handleClick} style={{ cursor: "pointer" }}>
-                  <p>Logout</p>
-                </li>
-                <li>
-                  <div className="profilePicture">
-                    <img
-                      src={
-                        user.profilePicture ||
-                        "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
-                      }
-                      alt=""
-                    />
-                  </div>
-                </li>
-                <li id="usernamename">
-                  <p>{user.username}</p>
-                </li>
-              </Link>
+              <li onClick={handleClick} style={{ cursor: "pointer" }}>
+                <p>Logout</p>
+              </li>
+              <li>
+                <div className="profilePicture">
+                  <img src={"/images/GymPerson.png"} alt="" />
+                </div>
+              </li>
+              <li id="usernamename">
+                <p>{user.username}</p>
+              </li>
             </>
           ) : (
             <>
