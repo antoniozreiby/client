@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   const { user } = useContext(AuthContext);
+  localStorage.removeItem("user");
 
   return (
     <div className="landing">
