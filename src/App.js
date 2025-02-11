@@ -8,6 +8,9 @@ import { useContext } from "react";
 import { AuthContext } from "./authContext";
 import Home from "./pages/home/Home";
 import Meal from "./pages/Meal/Meal";
+//import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+
+//if (process.env.NODE_ENV === "production") disableReactDevTools();
 
 function App() {
   const { user } = useContext(AuthContext);

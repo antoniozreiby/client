@@ -6,6 +6,8 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../authContext";
 import { category } from "../../data";
+import { base_url } from "../../constants";
+const URL = base_url;
 
 const CreateMeal = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
@@ -22,7 +24,7 @@ const CreateMeal = ({ setOpen }) => {
       author: user._id,
     };
     try {
-      await axios.post("http://localhost:2000/api/meals", newMeal, {
+      await axios.post(`${URL}/api/meals`, newMeal, {
         withCredentials: false,
       });
       setOpen(false);

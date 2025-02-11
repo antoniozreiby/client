@@ -4,11 +4,13 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import "./entry.css";
 import { AuthContext } from "../../authContext";
+import { base_url } from "../../constants";
+const URL = base_url;
 
 const Entries = () => {
   const { user } = useContext(AuthContext);
 
-  const { data } = useFetch(`http://localhost:2000/api/entries/${user._id}`);
+  const { data } = useFetch(`${URL}/api/entries/${user._id}`);
 
   function formatDate(dateString) {
     const date = new Date(dateString);

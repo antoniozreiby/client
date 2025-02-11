@@ -5,10 +5,12 @@ import useFetch from "../../useFetch";
 import { AuthContext } from "../../authContext";
 import "./meal.css";
 import { Link } from "react-router-dom";
+import { base_url } from "../../constants";
+const URL = base_url;
 
 const Meal = () => {
   const { user } = useContext(AuthContext);
-  const { data } = useFetch(`http://localhost:2000/api/meals/${user._id}`);
+  const { data } = useFetch(`${URL}/api/meals/${user._id}`);
 
   return (
     <div className="mealsView">

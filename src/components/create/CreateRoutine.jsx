@@ -6,6 +6,8 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../authContext.js";
 import { WorkoutType, BodyPart } from "../../data.js";
+import { base_url } from "../../constants";
+const URL = base_url;
 
 const CreateRoutine = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
@@ -23,7 +25,7 @@ const CreateRoutine = ({ setOpen }) => {
       author: user._id,
     };
     try {
-      await axios.post("http://localhost:2000/api/routines", newRoutine, {
+      await axios.post(`${URL}/api/routines`, newRoutine, {
         withCredentials: false,
       });
       setOpen(false);

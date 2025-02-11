@@ -5,10 +5,12 @@ import useFetch from "../../useFetch";
 import { AuthContext } from "../../authContext";
 import "./routine.css";
 import { Link } from "react-router-dom";
+import { base_url } from "../../constants";
+const URL = base_url;
 
 const Routines = () => {
   const { user } = useContext(AuthContext);
-  const { data } = useFetch(`http://localhost:2000/api/routines/${user._id}`);
+  const { data } = useFetch(`${URL}/api/routines/${user._id}`);
 
   return (
     <div className="routinesView">

@@ -7,6 +7,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { base_url } from "../../constants";
+const URL = base_url;
 
 function Register() {
   const navigate = useNavigate();
@@ -29,11 +31,9 @@ function Register() {
         data.append("file", file);
         data.append("upload_preset", "upload");
 
-        const uploadRes = await axios.post(
-          "http://localhost:2000/api/image/upload",
-          data,
-          { withCredentials: false }
-        );
+        const uploadRes = await axios.post(`${URL}/api/image/upload`, data, {
+          withCredentials: false,
+        });
 
         profileUrl = uploadRes.data.url;
       }
@@ -43,7 +43,7 @@ function Register() {
         profilePicture: profileUrl,
       };
 
-      await axios.post("http://localhost:2000/api/auth/register", newUser, {
+      await axios.post(`${URL}/api/auth/register`, newUser, {
         withCredentials: false,
       });
 
@@ -72,8 +72,8 @@ function Register() {
         });
       } else {
         Swal.fire({
-          title: "User Name already in use!",
-          text: "Please use another one.",
+          title: "Oops",
+          text: "Something went Worng ",
           icon: "error",
           confirmButtonText: "OK",
         });

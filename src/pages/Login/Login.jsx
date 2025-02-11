@@ -6,7 +6,9 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../authContext";
-
+import Swal from "sweetalert2";
+import { base_url } from "../../constants";
+const URL = base_url;
 function Login() {
   const [credentials, setCredentials] = useState({
     username: undefined,
@@ -22,14 +24,28 @@ function Login() {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    console.log(URL);
+    if (!credentials.username || !credentials.password) {
+      Swal.fire({
+        title: "Missing Fields",
+        text: "Please provide both username and password.",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post(
-        "http://localhost:2000/api/auth/login",
-        credentials
-      );
+      const res = await axios.post(`${URL}/api/auth/login`, credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      navigate("/home");
+      Swal.fire({
+        title: "Success!",
+        text: " Login successful !",
+        icon: "success",
+        confirmButtonText: "OK",
+      }).then(() => {
+        navigate("/home");
+      });
     } catch (err) {
       if (err.response && err.response.data) {
         dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
@@ -37,6 +53,16 @@ function Login() {
         dispatch({
           type: "LOGIN_FAILURE",
           payload: "An error occurred while logging in",
+        });
+      }
+      if (err.response && err.response.status === 404) {
+        Swal.fire({
+          title: "User Doesn't exist",
+          text: "Please Register a New User.",
+          icon: "error",
+          confirmButtonText: "Go to Register Page",
+        }).then(() => {
+          navigate("/register");
         });
       }
     }
