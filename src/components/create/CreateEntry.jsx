@@ -6,8 +6,8 @@ import axios from "axios";
 import useFetch from "../../useFetch";
 import { AuthContext } from "../../authContext";
 
-import { base_url } from "../../constants";
-const URL = base_url;
+import { base_url, serv_url } from "../../constants";
+const URL = serv_url;
 
 const CreateEntry = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
