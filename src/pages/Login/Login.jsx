@@ -37,6 +37,7 @@ function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(`${URL}/api/auth/login`, credentials);
+      console.log(URL);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       Swal.fire({
         title: "Success!",
