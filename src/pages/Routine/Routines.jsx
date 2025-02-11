@@ -5,8 +5,8 @@ import useFetch from "../../useFetch";
 import { AuthContext } from "../../authContext";
 import "./routine.css";
 import { Link } from "react-router-dom";
-import { base_url } from "../../constants";
-const URL = base_url;
+import { base_url, serv_url } from "../../constants";
+const URL = serv_url;
 
 const Routines = () => {
   const { user } = useContext(AuthContext);

@@ -6,8 +6,8 @@ import { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../authContext";
 import { category } from "../../data";
-import { base_url } from "../../constants";
-const URL = base_url;
+import { base_url, serv_url } from "../../constants";
+const URL = serv_url;
 
 const CreateMeal = ({ setOpen }) => {
   const { user } = useContext(AuthContext);
