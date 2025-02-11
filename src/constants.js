@@ -1,1 +1,1 @@
-export const base_url = "https://GymBuddy-api.onrender.com";
+export const base_url = "https://client-whlt.onrender.com";
