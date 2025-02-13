@@ -1,9 +1,8 @@
 export const WorkoutType = [
   "Cardio",
   "HIIT",
+  "Boddy Building",
   "Strength Training",
-  "Yoga",
-  "Zumba",
 ];
 
 export const BodyPart = [
@@ -19,6 +18,7 @@ export const BodyPart = [
 
 export const category = [
   "Appetizer & Snacks",
+  "Sunday Lebanese Dish",
   "Baking",
   "Grill",
   "Breakfast & Brunch",
@@ -26,4 +26,5 @@ export const category = [
   "Drinks",
   "Junk",
   "Main Course",
+  "soupe",
 ];
