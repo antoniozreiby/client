@@ -10,7 +10,9 @@ const Home = () => {
       <Navbar />
       <div className="banner">
         <h1>Welcome to GymBuddy</h1>
-        <p>The one stop solution for your fitness journey</p>
+        <p style={{ fontStyle: "italic" }}>
+          Your Fitness, Your Progress, Your Way
+        </p>
       </div>
       <div className="mainContainer">
         <HomeComp
