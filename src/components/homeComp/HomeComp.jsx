@@ -2,8 +2,6 @@ import React from "react";
 import "./HomeComp.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faEye } from "@fortawesome/free-solid-svg-icons";
 import CreateMeal from "../create/CreateMeal";
 import CreateEntry from "../create/CreateEntry";
 import CreateRoutine from "../create/CreateRoutine";
@@ -22,7 +20,7 @@ const HomeComp = ({ image, name, description, view }) => {
       <div className="buttons">
         <div className="createButton">
           <button onClick={() => setOpenPopup(true)}>
-            <FontAwesomeIcon icon={faPlus} />
+            <img src="/images/plus.png" alt="" />
           </button>
           <p>Add</p>
         </div>
@@ -30,7 +28,7 @@ const HomeComp = ({ image, name, description, view }) => {
         <div className="viewButton">
           <Link to={view}>
             <button>
-              <FontAwesomeIcon icon={faEye} />
+              <img src="/images/eye.png" alt="" />
             </button>
           </Link>
           <p>View</p>
