@@ -10,12 +10,14 @@
 }
 
 .mealsView .mealsViewContainer .mealViewItem {
-    border: 5px solid var(--red);
+    border: 3px solid var(--red);
     position: relative;
     height: 300px;
     width: 300px;
     display: flex;
     flex-direction: column;
+        background-color: rgba(94, 148, 189, 0.427);
+
 }
 
 

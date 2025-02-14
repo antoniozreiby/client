@@ -23,11 +23,11 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background-color: rgba(255, 228, 196, 0.523);
+    background-color: rgba(196, 255, 250, 0.523);
 }
 
 .entryItem h1 {
-    background-color: var(--dark-red);
+    background-color:  rgb(7, 22, 107);
     color: white;
     border-radius: 10px;
     padding: 5px;
