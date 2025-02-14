@@ -17,7 +17,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background-color: #fecda630;
+    background-color: #a6bffe30;
     border-radius: 10px;
     padding-top: 20px;
 }
@@ -90,11 +90,11 @@ form .txt_field {
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
-    color: #666666;
+    color: #b13737;
 }
 
-.signup_link a {
-    color: var(--orange);
+.signup_link Link {
+    color:  rgba(255, 0, 0, 0.71);
     text-decoration: none;
 }
 

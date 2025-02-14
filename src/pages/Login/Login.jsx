@@ -74,7 +74,7 @@ function Login() {
       <Navbar />
       <div className="loginCard">
         <div className="center">
-          <h1>Welcome Back!</h1>
+          <h1>Welcome Gym Rat!</h1>
           <form>
             <div className="txt_field">
               <input
@@ -100,9 +100,10 @@ function Login() {
               </button>
             </div>
             <div className="signup_link">
-              <p>
-                Not registered? <Link to="/register">Register</Link>
-              </p>
+              <p>Not registered? </p>
+              <Link className="Link">
+                Contact Your Coach to create your account
+              </Link>
             </div>
           </form>
         </div>
