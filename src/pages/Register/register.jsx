@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { base_url, serv_url } from "../../constants";
+import { serv_url } from "../../constants";
 const URL = serv_url;
 
 function Register() {

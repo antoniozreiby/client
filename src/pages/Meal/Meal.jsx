@@ -5,7 +5,7 @@ import useFetch from "../../useFetch";
 import { AuthContext } from "../../authContext";
 import "./meal.css";
 import { Link } from "react-router-dom";
-import { base_url, serv_url } from "../../constants";
+import { serv_url } from "../../constants";
 const URL = serv_url;
 
 const Meal = () => {

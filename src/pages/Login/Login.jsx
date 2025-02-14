@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../authContext";
 import Swal from "sweetalert2";
-import { base_url, serv_url } from "../../constants";
+import { serv_url } from "../../constants";
 const URL = serv_url;
 function Login() {
   const [credentials, setCredentials] = useState({

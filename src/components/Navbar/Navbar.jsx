@@ -9,6 +9,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const { user, dispatch } = useContext(AuthContext);
+  console.log({ user });
+  console.log(user?.username);
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGOUT" });
@@ -47,13 +49,9 @@ const Navbar = () => {
               <li onClick={handleClick} style={{ cursor: "pointer" }}>
                 <p>Logout</p>
               </li>
-              <li>
-                <div className="profilePicture">
-                  <img src={"/images/GymPerson.png"} alt="" />
-                </div>
-              </li>
-              <li id="usernamename">
-                <p>{user.username}</p>
+
+              <li id="username">
+                <p>{user?.username}</p>
               </li>
             </>
           ) : (

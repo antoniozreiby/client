@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--dark-red);
+    background-color: rgb(48, 57, 138);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     padding: 0px 7%;
     display: flex;
@@ -37,7 +37,12 @@
     position: relative;
     float: left;
 }
-
+#username p {
+  font-weight: bold;
+  color: white;
+  margin-right: 15px;
+  border-radius: 5px;
+}
 .profilePicture {
     height: 40px;
     width: 40px;
